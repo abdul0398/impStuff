@@ -1,0 +1,26 @@
+######### Using certbot ########
+
+
+
+(1)
+### For Ubuntu ####
+sudo apt update
+sudo apt install python3 python3-venv libaugeas0
+
+(2)
+#### set up a Python virtual environment ####
+sudo python3 -m venv /opt/certbot/
+sudo /opt/certbot/bin/pip install --upgrade pip
+
+(3)
+#### Install certbot ####
+sudo /opt/certbot/bin/pip install certbot certbot-nginx
+
+
+(4)
+###### create a symbolic link #######
+sudo ln -s /opt/certbot/bin/certbot /usr/bin/certbot
+
+(5)
+####### Install and activate SSL ########
+sudo certbot --nginx
